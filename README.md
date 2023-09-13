@@ -83,9 +83,9 @@ Ponadto, SO obsługuje różnych użytkowników, umożliwiając im dostęp do za
 
 - **Wielozadaniowość:** System operacyjny pozwala na równoczesne wykonywanie wielu procesów. Przykładem może być korzystanie z przeglądarki internetowej, gdzie jednocześnie możesz przeglądać strony internetowe, odtwarzać muzykę w tle, pobierać pliki i korzystać z innych aplikacji. SO zarządza priorytetami i czasem procesora, aby każdy proces mógł być obsługiwany płynnie.
 
-
-</div>
-
 - **Interakcja z użytkownikiem:** System operacyjny dostarcza interfejs użytkownika, który umożliwia interakcję z komputerem. Przykłady to interfejsy graficzne takie jak Windows, macOS czy GNOME w systemie Linux, które umożliwiają użytkownikowi wykonywanie działań za pomocą myszki i klawiatury oraz zapewniają wizualne reprezentacje plików i programów.
 
 - **Komunikacja z innymi komputerami lub urządzeniami:** System operacyjny może obsługiwać komunikację między różnymi urządzeniami lub komputerami w sieci. Na przykład, system operacyjny umożliwia komunikację komputera z drukarką w sieci lokalnej lub dostęp do zasobów sieciowych, takich jak współdzielone pliki. Protokoły takie jak TCP/IP umożliwiają komunikację między komputerami w sieci internetowej.
+
+
+</div>
