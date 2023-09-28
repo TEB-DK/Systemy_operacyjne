@@ -30,9 +30,6 @@ Tabela porównująca minimalne i zalecane wymagania dla dwóch wersji systemu MS
 | Dwa napędy dyskietek DS lub dysk twardy | Dwa napędy dyskietek DS i dysk twardy (ok. 5 MB) |
 | Co najmniej 256 kB RAM                 | 512 kB RAM                                |
 | Możliwość pracy w trybie graficznym    | Klawiatura i mysz                          |
-| Dwa napędy dyskietek DS lub dysk twardy | Dwa napędy dyskietek DS i dysk twardy (ok. 5 MB) |
-| Co najmniej 256 kB RAM                 | 512 kB RAM                                |
-| Możliwość pracy w trybie graficznym    | Klawiatura i mysz                          |
 
 </div>
 
