@@ -152,14 +152,15 @@ Windows 2000 wprowadza NTFS 3.0, Szyfrowanie systemu plików, a także podstawow
 
 ##### Wymagania sprzętowe
 
-|                  | Minimalne                                     |
-|------------------|-----------------------------------------------|
-| **Procesor**     | Pentium 133 MHz lub szybszy                   |
-| **Pamięć RAM**   | 64 MB                                         |
-| **Miejsce na dysku** | 650 MB wolnego miejsca                      |
-| **Karta graficzna** | VGA (640 × 480)                              |
-| **Napęd CD-ROM** | Napęd CD-ROM (tylko dla wersji pudełkowej)    |
-| **Klawiatura**   | Tak                                    |
+|                      | Minimalne                         | Zalecane                          |
+|----------------------|-----------------------------------|-----------------------------------|
+| **Procesor**         | Pentium 133 MHz lub szybszy       | Pentium II 300Mhz lub szybszy     |
+| **Pamięć RAM**       | 32 MB                             | 128 MB                            |
+| **Miejsce na dysku** | 1GB wolnego miejsca               | 5GB wolnego miejsca               |
+| **Karta graficzna**  | VGA (640 × 480)                   | VGA (1024 × 768)                  |
+| **Napęd CD-ROM**     | Tak (tylko dla wersji pudełkowej) | Tak (tylko dla wersji pudełkowej) |
+| **Klawiatura**       | Tak                               | Tak                               |
+| **Mysz**             | Tak                               | Tak                               |
 
 </div>
 
