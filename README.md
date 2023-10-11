@@ -463,6 +463,8 @@ Te edycje zostały stworzone, aby spełnić różnorodne potrzeby użytkowników
 
 </div>
 
+<hr>
+
 ## 2. **Architektura Systemu Windows:**
 ### Struktura systemu plików NTFS.
 Wersja 3.0 systemu plików NTFS wprowadza szereg innowacyjnych funkcji, zwiększając zarówno bezpieczeństwo, jak i efektywność zarządzania danymi.
@@ -625,45 +627,67 @@ Rejestr systemowy w systemie Windows to hierarchiczna baza danych, która przech
 4. **Jak modyfikować wartości w rejestrze, i w jaki sposób wpływa to na system?**
 5. **W jaki sposób usuwać klucze i wartości z rejestru?**
 
+<hr>
+
 ## 3. **Interfejs Użytkownika:**
     - Ewolucja interfejsu użytkownika (od Windows 95 do Windows 10).
     - Używanie i dostosowywanie pulpitu.
+
+<hr>
 
 ## 4. **Instalacja i Konfiguracja Systemu Windows:**
     - Proces instalacji systemu operacyjnego.
     - Konfiguracja podstawowych ustawień i personalizacja.
 
+<hr>
+
 ## 5. **Zarządzanie Użytkownikami i Grupami:**
     - Tworzenie i zarządzanie kontami użytkowników.
     - Przypisywanie uprawnień i przynależność do grup.
+
+<hr>
 
 ## 6. **Bezpieczeństwo w Systemie Windows:**
     - Mechanizmy kontroli dostępu.
     - Ochrona przed złośliwym oprogramowaniem (antywirusy, zaporę ogniową).
 
+<hr>
+
 ## 7. **Administracja Zasobami Systemowymi:**
     - Monitorowanie zasobów systemowych (CPU, pamięć, dysk).
     - Zarządzanie urządzeniami i sterownikami.
+
+<hr>
 
 ## 8. **Sieci w Systemie Windows:**
     - Konfiguracja i zarządzanie sieciami.
     - Ustawienia TCP/IP i DHCP.
 
+<hr>
+
 ## 9. **Narzędzia Diagnostyczne:**
     - Narzędzia diagnostyczne dostępne w systemie Windows.
     - Jak rozwiązywać problemy systemowe.
+
+<hr>
 
 ## 10. **Windows PowerShell:**
     - Wprowadzenie do automatyzacji za pomocą PowerShell.
     - Przykłady skryptów i poleceń.
 
+<hr>
+
 ## 11. **System Plików NTFS:**
     - Charakterystyka i cechy systemu plików NTFS.
     - Zarządzanie uprawnieniami i atrybutami plików.
 
+<hr>
+
 ## 12. **Hyper-V i Wirtualizacja:**
     - Wirtualizacja na platformie Windows.
     - Ustawienia i zarządzanie maszynami wirtualnymi.
+
+<hr>
 
 ## 13. **Tworzenie i Zabezpieczanie Kopii Zapasowych:**
     - Narzędzia do tworzenia kopii zapasowych.
