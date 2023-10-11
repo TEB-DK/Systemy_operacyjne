@@ -1,5 +1,5 @@
 <div align='center'>
-  
+
 <h1>
 <img src='https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/dadca951-917a-44e2-9716-2bb85c171ff4' width='32' height='32'> System Windows <img src='https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/95fa9da7-204d-4da4-828a-881622369be9' width='32'>
 </h1>
@@ -155,8 +155,8 @@ Windows 2000 wprowadza NTFS 3.0, Szyfrowanie systemu plików, a także podstawow
 |                  | Minimalne                                     |
 |------------------|-----------------------------------------------|
 | **Procesor**     | Pentium 133 MHz lub szybszy                   |
-| **Pamięć RAM**   | 64 MB                                         |
-| **Miejsce na dysku** | 650 MB wolnego miejsca                      |
+| **Pamięć RAM**   | 32 MB  (128 MB Serwer)                                       |
+| **Miejsce na dysku** | 1 GB wolnego miejsca                      |
 | **Karta graficzna** | VGA (640 × 480)                              |
 | **Napęd CD-ROM** | Napęd CD-ROM (tylko dla wersji pudełkowej)    |
 | **Klawiatura**   | Tak                                    |
