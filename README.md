@@ -464,9 +464,166 @@ Te edycje zostały stworzone, aby spełnić różnorodne potrzeby użytkowników
 </div>
 
 ## 2. **Architektura Systemu Windows:**
-    - Struktura systemu plików NTFS.
-    - Model zarządzania procesami i pamięcią.
-    - Koncepcja rejestru systemowego.
+### Struktura systemu plików NTFS.
+Wersja 3.0 systemu plików NTFS wprowadza szereg innowacyjnych funkcji, zwiększając zarówno bezpieczeństwo, jak i efektywność zarządzania danymi.
+
+1. **Obsługa Plików Rzadkich, Przydziałów Dysków i Punktu Ponownej Analizy:**
+   - NTFS 3.0 umożliwia obsługę plików rzadkich, co oznacza efektywne zarządzanie przestrzenią dyskową poprzez minimalizację zajmowanej przestrzeni przez pliki.
+   - Mechanizm przydzielania dysków (disk quotas) pozwala na kontrolowanie ilości dostępnej przestrzeni dla poszczególnych użytkowników.
+   - Punkty ponownej analizy (reparse points) umożliwiają elastyczne zarządzanie zasobami systemu plików.
+
+2. **Śledzenie Łączy Rozproszonych i Szyfrowanie na Poziomie Plików (EFS):**
+   - Nowa wersja NTFS wprowadza możliwość śledzenia łączy rozproszonych, co ułatwia zarządzanie i analizę struktury plików.
+   - Encrypting File System (EFS) umożliwia szyfrowanie plików i katalogów na poziomie plików, zwiększając poziom ochrony danych.
+
+3. **Księgowanie i Dziennik Zmian:**
+   - Księgowanie, wprowadzone od NTFS 3.0 w Windows 2000, umożliwia wewnętrzny dziennik zmian, poprawiając ochronę danych przed błędami zapisu.
+   - Działa jako narzędzie wspomagające dla operacji dyskowych, takich jak CHKDSK, przyczyniając się do efektywnego zarządzania dyskiem.
+
+4. **Prawa Dostępu dla Grup i Użytkowników:**
+   - NTFS 3.0 wprowadza rozbudowane prawa dostępu dla grup i użytkowników, umożliwiające bardziej precyzyjne zarządzanie bezpieczeństwem danych.
+   - Pełne wykorzystanie tej funkcji dostępne jest w Windows 2000, Windows XP Professional, Windows Server 2003, a także nie-domowych wersjach Windows Vista.
+
+5. **Transakcyjność:**
+   - Wprowadzenie transakcyjności od Windows Vista / Windows Server 2008 pozwala na wykonywanie operacji na systemie plików w ramach transakcji.
+   - Transakcje są optymalizowane, minimalizując czas ich zamknięcia i nie wprowadzając dodatkowego obciążenia w normalnych warunkach.
+
+6. **Funkcjonalność:**
+   - System plików NTFS zapewnia rozbudowaną i elastyczną platformę, umożliwiającą korzystanie z innych systemów plików.
+   - Pełna obsługa modelu zabezpieczeń systemu Windows NT oraz wsparcie dla wielu strumieni danych to kluczowe elementy funkcjonalności NTFS.
+
+#### Wady NTFS
+Pomimo licznych zalet, NTFS ma pewne ograniczenia. Jednym z nich jest fragmentacja plików, co prowadzi do wydłużenia czasu operacji odczytu i zapisu na dysku. Defragmentacja, choć możliwa, może trwać długo, co wpływa na ogólną wydajność systemu operacyjnego. W przeciwieństwie do niektórych systemów plików, takich jak ext2, ext3, ext4 w środowisku Linux, NTFS jest bardziej podatny na ten problem.
+
+> Jądro Linux od wersji 2.2.0 (wydanej w 1999 roku) pozwala na odczyt partycji NTFS (wszystkie aktualne dystrybucje). Zapis umożliwia sterownik NTFS-3G korzystający z FUSE. Od lutego 2007 sterownik NTFS-3G jest w wersji stabilnej 1.0, poprawnie zapisuje, ale nie zapewnia pełnej zgodności np. praw dostępu.
+
+#### 🌟 Zadanie do wykonania 🌟
+
+**Przywracanie wersji pliku z Shadow Copy**
+
+> Zadanie to pozwala zrozumieć, jak system plików NTFS przechowuje poprzednie wersje plików za pomocą Shadow Copy. Użytkownik może przetestować funkcję przywracania i zrozumieć, jak system chroni przed utratą danych poprzez przechowywanie kopii zapasowych.
+
+**Kroki:**
+
+❗ Należy udokumentować każdy krok zadania zrzutem ekranowym pełnego ekranu. ❗
+
+1. **Utworzenie pliku:**
+   - Stwórz nowy plik tekstowy o nazwie "Przykladowy_plik.txt" na pulpicie.
+   - Dodaj do niego kilka linii tekstu.
+
+2. **Utworzenie Shadow catalog:**
+   - Uruchom konsolę systemową jako administrator.
+   - Użyj polecenia `vssadmin create shadow /for=C:`
+
+3. **Zmiana pliku:**
+   - Otwórz "Przykladowy_plik.txt" i wprowadź pewne zmiany w tekście.
+   - Zapisz plik.
+
+4. **Przywracanie poprzedniej wersji:**
+   - Kliknij prawym przyciskiem myszy na "Przykladowy_plik.txt" na pulpicie.
+   - Wybierz opcję "Właściwości".
+   - Przejdź do zakładki "Poprzednie wersje".
+   - Wybierz wcześniejszą wersję pliku z listy i kliknij "Przywróć".
+
+5. **Potwierdzenie przywrócenia:**
+   - Otwórz "Przykladowy_plik.txt" i sprawdź, czy przywrócono poprzednią wersję pliku.
+
+**Sprawozdanie z wykonania zadania**
+1. **Co to jest Shadow Copy w kontekście systemu plików NTFS?**
+2. **Jak utworzyć cień katalogowy za pomocą polecenia vssadmin?**
+3. **Jak sprawdzić i przywrócić poprzednie wersje pliku za pomocą właściwości pliku w systemie Windows?**
+4. **Czy operacja przywracania poprzedniej wersji pliku wpływa na aktualną wersję?**
+
+
+### Koncepcja rejestru systemowego.
+
+Rejestr systemowy w systemie Windows to hierarchiczna baza danych, która przechowuje kluczowe informacje konfiguracyjne dotyczące systemu operacyjnego, oprogramowania, sterowników i użytkownika. Składa się z gałęzi, podgałęzi, kluczy i wartości, które zawierają informacje o konfiguracji systemu i aplikacji.
+
+#### Struktura Rejestru
+
+   ##### Gałęzie Rejestru:
+   
+   - `HKEY_CLASSES_ROOT (HKCR):` Zawiera informacje o zarejestrowanych typach plików i skojarzeniach z aplikacjami.
+   
+   - `HKEY_CURRENT_USER (HKCU):` Zawiera ustawienia związane z zalogowanym użytkownikiem.
+   
+   - `HKEY_LOCAL_MACHINE (HKLM):` Zawiera konfiguracje sprzętu i oprogramowania na poziomie maszyny.
+   
+   - `HKEY_USERS:` Każdemu zalogowanemu użytkownikowi przypisane jest poddrzewo zawierające jego ustawienia.
+   
+   - `HKEY_CURRENT_CONFIG:` Zawiera informacje o bieżącej konfiguracji sprzętu.
+
+#### Struktura Kluczy i Wartości
+
+- **Klucze:** Reprezentują poziomy w hierarchii rejestru. Na przykład, w `HKLM` mogą być klucze dla oprogramowania, sterowników, itp.
+
+- **Wartości:** Są przechowywane w kluczach i przechowują konkretne dane konfiguracyjne. Mogą to być `ciągi znaków`, `liczby`, `dane binarne`, itp.
+
+#### Funkcje i Zastosowania Rejestru
+
+- Przechowywanie Ustawień Aplikacji:
+
+> Rejestr jest często używany do przechowywania ustawień aplikacji. Na przykład, ścieżki do plików, preferencje interfejsu użytkownika, itp.
+
+- Konfiguracja Systemu:
+
+> Konfiguracja systemu, takie jak informacje o zainstalowanym oprogramowaniu, sterownikach czy ustawieniach systemowych, jest przechowywana w różnych gałęziach rejestru.
+
+- Obsługa Działań Użytkownika:
+
+> Informacje związane z danym użytkownikiem, takie jak preferencje pulpitu czy ostatnio otwierane pliki, są przechowywane w HKCU.
+
+- Rejestracja Rozszerzeń i Skojarzeń:
+
+> Rejestr systemowy jest używany do rejestracji rozszerzeń plików i skojarzeń z aplikacjami. Na przykład, informacje o tym, jakie programy są skojarzone z danym typem pliku.
+
+#### Operacje na Rejestrze
+
+- Odczyt Wartości i Kluczy:
+
+> Aplikacje i system operacyjny mogą odczytywać wartości i klucze z rejestru w celu uzyskania informacji konfiguracyjnych.
+
+- Zapis Wartości i Kluczy:
+
+> Programy mogą zmieniać zawartość rejestru, zapisując nowe wartości lub modyfikując istniejące.
+
+- Monitorowanie Zmian w Rejestrze:
+
+> System Windows umożliwia monitorowanie zmian w rejestrze, co pozwala na śledzenie aktywności aplikacji i systemu.
+
+### 🌟 Zadanie do wykonania 🌟
+**Eksploracja i modyfikacja rejestru systemowego**
+
+**Kroki:**
+
+❗ Należy udokumentować każdy krok zadania zrzutem ekranowym pełnego ekranu. ❗
+
+1. **Eksploracja Rejestru:**
+   - Uruchom edytor rejestru, wpisując "regedit" w menu Start lub w oknie dialogowym "Uruchom" (Win + R).
+   - Przeglądaj strukturę rejestru, zwracając uwagę na gałęzie, klucze i wartości.
+
+2. **Znalezienie Konkretnego Klucza:**
+   - Znajdź klucz o nazwie "HKEY_LOCAL_MACHINE\SOFTWARE". 
+   - Przejrzyj jego zawartość, zwracając uwagę na zarejestrowane programy i ustawienia.
+
+3. **Modyfikacja Wartości:**
+   - Znajdź klucz "HKEY_CURRENT_USER\Control Panel\Desktop".
+   - Znajdź wartość o nazwie "Wallpaper" (odpowiedzialną za tapetę pulpitu) i zmień jej wartość na ścieżkę do innej grafiki.
+
+4. **Utworzenie Nowego Klucza:**
+   - W "HKEY_CURRENT_USER" utwórz nowy klucz o nazwie "MójNowyKlucz".
+   - Dodaj kilka wartości do tego klucza, na przykład "Wartość1" o wartości "A", "Wartość2" o wartości "B".
+
+5. **Przywrócenie Rejestru:**
+   - Wykonaj kopię zapasową rejestru przed modyfikacjami, aby móc przywrócić oryginalne ustawienia.
+   - Przywróć oryginalną wartość "Wallpaper" i usuń utworzony wcześniej klucz "MójNowyKlucz".
+
+**Sprawozdanie z wykonania zadania**
+1. **Dlaczego ważne jest wykonywanie kopii zapasowej rejestru przed dokonywaniem modyfikacji?**
+2. **Jakie są różnice między kluczami a wartościami w reestrze systemowym?**
+3. **Jak można znaleźć konkretny klucz w edytorze rejestru?**
+4. **Jak modyfikować wartości w rejestrze, i w jaki sposób wpływa to na system?**
+5. **W jaki sposób usuwać klucze i wartości z rejestru?**
 
 ## 3. **Interfejs Użytkownika:**
     - Ewolucja interfejsu użytkownika (od Windows 95 do Windows 10).
