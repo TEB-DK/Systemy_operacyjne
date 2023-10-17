@@ -591,7 +591,10 @@ $ wait
 
 W tym przykładzie czekanie trwało nieco mniej niż 999 sekund. Możemy czekać tylko na wybrane polecenia w tle, podając ich numery jako argumenty poleceniu `wait`.
 
----
+<div align="right">
+🐧 🐧🐧
+</div>
 
+---
 
 </div>
