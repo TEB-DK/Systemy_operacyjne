@@ -608,6 +608,7 @@ Rejestr systemowy w systemie Windows to hierarchiczna baza danych, która przech
    - Znajdź klucz o nazwie "HKEY_LOCAL_MACHINE\SOFTWARE". 
    - Przejrzyj jego zawartość, zwracając uwagę na zarejestrowane programy i ustawienia.
    - Znajdź zarejestrowaną wersje Pythona i podaj ścieżkę do klucza rejestru oraz jego typ i wersję.
+   - Znajdź wersje systemową biosu, lokalnej maszyny. Podaj ścieżkę oraz pełną wartość tego klucza
 
 3. **Modyfikacja Wartości:**
    - Znajdź klucz "HKEY_CURRENT_USER\Control Panel\Desktop".
