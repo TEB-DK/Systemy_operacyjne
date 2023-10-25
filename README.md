@@ -211,8 +211,6 @@ $ ls -l cdimage.iso
 -rw-r--r-- 1 bashtest users 495605760 2023-08-11 18:30 cdimage.iso
 ```
 
-Oto sformatowany tekst w formie Markdown:
-
 #### Polecenie `du`
 
 Wyświetla zużycie pojemności dysku dla każdego katalogu rekurencyjnie dla podanych argumentów. Jeśli brakuje argumentów, to przegląda katalog bieżący. Polecenie to jest przydatne do policzenia sumarycznej zajętości dysku (`opcja -s`) albo do przejrzenia rozmiarów podkatalogów danego katalogu (`opcja --max-depth=1`).
