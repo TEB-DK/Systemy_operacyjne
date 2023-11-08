@@ -631,21 +631,182 @@ Rejestr systemowy w systemie Windows to hierarchiczna baza danych, która przech
 
 <hr>
 
-## 3. **Interfejs Użytkownika:**
-    - Ewolucja interfejsu użytkownika (od Windows 95 do Windows 10).
-    - Używanie i dostosowywanie pulpitu.
-
-<hr>
-
-## 4. **Instalacja i Konfiguracja Systemu Windows:**
-    - Proces instalacji systemu operacyjnego.
-    - Konfiguracja podstawowych ustawień i personalizacja.
-
-<hr>
-
 ## 5. **Zarządzanie Użytkownikami i Grupami:**
-    - Tworzenie i zarządzanie kontami użytkowników.
-    - Przypisywanie uprawnień i przynależność do grup.
+
+Zarządzanie grupami i użytkownikami w systemie Windows to proces, który pozwala administratorom oraz użytkownikom na kontrolowanie dostępu do zasobów i aplikacji w systemie operacyjnym Windows. Obejmuje to tworzenie, konfigurowanie, modyfikowanie i usuwanie kont użytkowników oraz grup, a także przypisywanie odpowiednich uprawnień do tych kont.
+
+### Tworzenie kont użytkowników
+Administratorzy lub właściciele komputera mogą tworzyć konta użytkowników, które pozwalają osobom na dostęp do komputera lub sieci. Każde konto jest identyfikowane unikalną nazwą użytkownika (nazwą konta) i hasłem.
+
+#### Aby utworzyć nowe konto użytkownika, należy:
+
+- Wybierz pozycję ``Start``  > ``Ustawienia``  > ``Konta``
+- Następnie wybierz pozycję ``Rodzina i inni użytkownicy`` (W niektórych wersjach systemu Windows zostanie wyświetlona opcja ``Inni użytkownicy``).
+- Wybierz opcję ``Dodaj kogoś innego do tego komputera``.
+- Wybierz pozycję ``Nie mam informacji logowania tej osoby``
+- Następnie na kolejnej stronie wybierz pozycję ``Dodaj użytkownika bez konta Microsoft``.
+- Wpisz nazwę użytkownika, hasło i wskazówkę do hasła lub wybierz pytania zabezpieczające, a następnie wybierz pozycję Dalej.
+
+[🔗 Jak utworzyć konto na W10/W11](https://support.microsoft.com/pl-pl/windows/dodawanie-lub-usuwanie-kont-na-komputerze-osobistym-104dc19f-6430-4b49-6a2b-e4dbd1dcdf32#WindowsVersion=Windows_10)
+
+#### Aby utworzyć nowe konto użytkownika za pomocą ``lusrmgr.msc``:
+Do tworzenia kont użytkowników lokalnych w tym miejscu możemy dostać się na kilka różnych sposobów. Jednym z nich jest wyszukanie na urządzeniu i uruchomienie ``Computer Management`` oraz odnalezienie tam opcji ``Local Users and Groups``. Bądź za pomocą ``lusrmgr.msc`` wpisanego w CMD.
+
+<div align='center'>
+
+![lusrmgr.exe](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/7e669fa7-abcb-4948-959f-7e1f8bcf21b9)
+
+</div>
+
+Konto nowego użytkownika możemy utworzyć:
+- Klikając ``PPM`` (Prawy Przycisk Myszy) na pustą przestrzeń.
+- Następnie wybierając opcję ``New User…``.
+
+W wyświetlonym nam kreatorze musimy uzupełnić podstawowe dane dotyczące nowo tworzonego użytkownika.
+- Pole ``User name`` pozwala na określenie nazwy konta użytkownika.
+- W polu ``Full name`` określamy nazwę konta użytkownika, która będzie wyświetlana np. na ekranie logowania.
+- Pole ``Description`` pozwala nam na opcjonalne dodanie opisu do tworzonego konta.
+- W polu ``Password`` podajemy hasło do konta tworzonego użytkownika.
+- W polu ``Confirm Password`` ponownie podajemy hasło do konta tworzonego użytkownika, w celu potwierdzenia.
+
+> Poniżej dostępne mamy również 4 opcje dotyczące haseł. Część z nich jest wyklucza się wzajemnie, więc staje się możliwa do wybrania dopiero po wyłączeniu innych, wykluczających jej opcji:
+
+- ``User must change password at next logon`` – Opcja zalecana i zgodna z dobrymi praktykami bezpieczeństwa. Wymusza na użytkowniku zmianę ustawionego przez nas hasła zaraz po pierwszym zalogowaniu do systemu;
+- ``User cannot change pasword`` – opcja uniemożliwiające użytkownikowi zmianę jego hasła (dostępna po odznaczeniu pierwszej opcji);
+- ``Password never expires`` – opcja pozwalająca na nadpisanie np. ustawionych w GPO ustawień dotyczących częstotliwości zmiany hasła. Zaznaczenie opcji powoduje, że użytkownik nie będzie musiał (i nie będzie miał możliwości) zmieniać hasła do swojego konta;
+- ``Account is disabled`` – czyli opcja pozwalająca na czasowe wyłączenie konta. Tą opcję możemy wykorzystać np. jeżeli tworzone konto nie będzie wykorzystywane w najbliższym czasie.
+
+<div align='center'>
+
+![new_user](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/a3d0214a-65cf-48dc-9e39-373ac0b84e4c)
+
+</div>
+
+#### Aby utworzyć nowe konto użytkownika za pomocą ``CMD``:
+Tworząc konta z poziomu CMD będziemy posługiwali się poleceniem „net user”, które pozwala na zarządzanie kontami użytkowników lokalnych. Do jego wykorzystania niezbędne są oczywiście uprawnienia administratora, czyli de facto uruchomienie Command Line-a jako administrator. Konto użytkownika lokalnego możemy stworzyć posługując się prostym poleceniem
+
+```cmd
+net user /add <Nazwa użytkownika> <Hasło do tworzonego konta> 
+```
+
+Natomiast opcja ukrycia hasła w trakcie tworzenia nowego konta też jest możliwa:
+
+``*`` - spowoduje w tym przypadku ukrycie hasła. Konsola poprosi nas o dwukrotne wprowadzenia hasła w konsoli, nie ujawniając przy tym wpisywanego hasła na ekranie
+
+```cmd
+net user /add <Nazwa użytkownika> *
+```
+
+
+Polecenie ``net user`` oferuje nam oczywiście o wiele więcej dodatkowych opcji przy okazji tworzenia konta. Możemy dodatkowo określić takie parametry jak „Full Name” czyli wyświetlana nazwa użytkownika, określić czy tworzone konto ma być od razu włączone czy ograniczyć możliwość logowania na konto do konkretnych dni i godzin. Dostępnych opcji jest wiele, a ich pełną listę można znaleźć w [🔗 dokumentacji Microsoft-u dla tego polecenia](https://learn.microsoft.com/pl-pl/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771865(v=ws.11)). Przykładowe polecenie tworzące nowe konto oraz określające wymienione wyżej kwestie może wyglądać następująco:
+
+```cmd
+net user /add <Nazwa użytkownika> * /active:<yes/no> /fullname:"<Wyświetlana nazwa użytkownika>" /times:<zakres dni złożony z skrótów angielskich nazw>,<godziny w notacji 24 lub 12h>
+```
+
+<div align='center'>
+
+![net user](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/497f22bb-2470-48aa-a325-69e252cc4b87)
+
+</div>
+
+### Typy kont użytkowników
+W systemie Windows istnieją różne typy kont użytkowników, w tym:
+   - Konto administratora: Ma pełny dostęp do komputera i prawo do zarządzania innymi kontami.
+   - Konto standardowe: Ma ograniczony dostęp i nie ma praw administratora.
+
+Prócz tego w Windows 10, istnieją ``wbudowane konta lokalne``. Domyślnie, tworzone są cztery wbudowane konta lokalne:
+
+<div align='center'>
+
+![wbudowane konta lokalne](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/9d6d7b82-9aa2-4bd2-85bd-42ab1c2138ca)
+
+</div>
+
+- ``Administrator`` – czyli pierwsze konto, które jest tworzone podczas instalacji systemu. Jest to konto administracyjne posiadające najwyższe, pełne uprawnienia do zarządzania systemem. Wbudowane konto administratora posiada w niektórych przypadkach wyższe uprawnienia niż utworzone później konta administracyjne. Pozwala to na odzyskanie kontroli nad komputerem np. w przypadku błędnej konfiguracji GPO, która uniemożliwi dostęp nawet kontom administracyjnym. W przypadku tego typu newralgicznych mechanizmów, domyślnie nie będą one działały na konto wbudowanego administratora (chyba, że skonfigurujemy odpowiednie opcje). Z punktu widzenia bezpieczeństwa – ze względu na bardzo szerokie uprawnienia, nie powinniśmy wykorzystywać go do codziennej pracy. Mimo, że nie można go usunąć, to istnieje możliwość jego wyłączenia. Utworzenie niezbędnych do codziennej pracy kont, wyłączenie wbudowanego konta administratora i wykorzystywanie uprawnień tylko wtedy, gdy jest to niezbędne jest stanowczo zalecaną dobrą praktyką, pozwalającą na podniesienie naszego poziomu bezpieczeństwa.
+- ``DefaultAccount`` – znane również jako „Default System Managed Accoint” (DSMA). Konto to tworzone jest w bazie SAM wraz z pierwszym uruchomieniem urządzenia. Jest kontem posiadającym uprawnienia na poziomie zwykłego użytkownika, które jest zarządzane przez system. Jest wykorzystywane do uruchamiania procesów, które są obsługiwane przez wielu użytkowników lub są od nich całkowicie niezależne.
+- ``Guest`` – konto, które jest tworzone wraz z instalacją systemu, ale pozostaje domyślnie wyłączone. Jest kontem posiadającym bardzo ograniczone uprawnienia oraz domyślnie nieposiadającym hasła. Było ono wykorzystywane w starszych wersjach systemu do umożliwienia zalogowania się do komputera osobom nie posiadającym konta na danym urządzeniu. Ze względu na ryzyko jakie niesie za sobą włączenie i umożliwienie wykorzystania tego typu konta, jest to stanowczo niezalecana praktyka.
+- ``WDAGUtilityAccount`` – konto tworzone wraz z instalacją systemu, które jest wykorzystywane przez system w ramach Windows Defender Application Guard. Jest ono domyślnie wyłączone, dopóki sama funkcjonalność nie zostanie włączona na urządzeniu.
+
+### Tworzenie grup użytkowników
+Grupy użytkowników pozwalają na łatwiejsze zarządzanie uprawnieniami i dostępem. Administratorzy mogą tworzyć grupy i przypisywać do nich różne konta użytkowników. Następnie można przypisać uprawnienia na poziomie grupy, co ułatwia zarządzanie dostępem.
+
+Podobnie jak i lokalne konta użytkowników, grupy również posiadają ``wbudowne grupy lokalne``:
+<div align='center'>
+
+![wbudowane grupy lokalne](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/06c701fe-bb9e-4103-aea7-8c70baad1981)
+
+</div>
+
+W zasadzie wszystkie wbudowane w system grupy bazują na przypisanym do nich specyficznym zestawie uprawnień, pozwalającym na wykonanie danych czynności. Dla przykładu grupa Backup Operators posiada uprawnienia do czynności związanych z backup-ami, czy Hyper-V Administrators do czynności związanych z Hyper-V. Nazwy grup w wielu przypadkach zostały nadane dość logicznie, adekwatnie do uprawnień, które możemy dzięki nim uzyskać.
+
+#### Aby utworzyć lokalną grupe użytkowników za pomocą ``lusrmgr.msc``:
+
+<div align='center'>
+
+![lusrmgr.msc](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/8b0648e1-52e5-4136-90ac-736d7756d618)
+
+</div>
+
+W celu utworzenia nowej grupy:
+- Klikamy ``PPM`` na pustą przestrzeń, a następnie wybieramy opcję ``New Group…``.
+- Następnie w prostym kreatorze musimy tylko wskazać ``nazwę grupy`` oraz opcjonalnie uzupełnić jej opis i ``dodać członków``.
+- Po kliknięciu przycisku ``Create`` grupa zostaje utworzona.
+
+Aktualnie, grupa jest oczywiście wyłącznie „zbiorem” użytkowników. Wszelkie uprawnienia, które będą nadawane członkom grupy, należy teraz powiązać z grupą np. w lokalnym GPO. Możemy to zrobić w zaznaczonym na zrzucie ekranu poniżej miejscu, dodając grupę do polityk/uprawnień, które chcemy jej nadać:
+
+#### Aby utworzyć lokalną grupe użytkowników za pomocą ``CMD``:
+
+Grupy lokalne możemy oczywiście również tworzyć z poziomu CMD. Oczywiście, aby tworzyć grupy niezbędne są nam uprawnienia administratora, czyli de facto uruchomienie Command Line-a jako administrator. Do tworzenia grup lokalnych będziemy posługiwali się poleceniem „net localgroup” (więcej na temat możliwości polecenia „net localgroup” można przeczytać w poświęconej mu [🔗 oficjalnej dokumentacji Micosoft](https://learn.microsoft.com/pl-pl/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754051(v=ws.11)).). Grupę, można dodać posługując się prostym poleceniem:
+
+```cmd
+net localgroup <Nazwa grupy> /add
+```
+
+Naturalnie z poziomu CMD mamy również możliwość dodania członków do grupy lokalnej. W tym celu możemy posłużyć się poleceniem:
+```cmd
+net localgroup "<Nazwa Grupy>" "<Nazwa Użytkownika>" /add
+```
+
+#### Przypisywanie uprawnień
+Administratorzy lub właściciele zasobów (plików, folderów, aplikacji) mogą przypisywać uprawnienia do tych zasobów. To oznacza, że można kontrolować, kto ma dostęp do konkretnych zasobów, a także, w jakim zakresie.
+
+##### Aby przypisać uprawnienia do lokalnej grupy za pomocą ``gpedit.msc``:
+
+W celu przypisania nowych uprawnień należy:
+- Uruchomić CMD.
+- Wpisać ``gpedit.msc`` lub ``mmc`` i zatwierdzić.
+- Odnaleźć konkretną grupe i określić odpowiednie polityki.
+
+<div align='center'>
+
+![gpmc.msc](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/3c114f82-b889-4555-9ead-3917190c089e)
+
+</div>
+
+### 🌟 Zadanie do wykonania 🌟
+**Administracja lokalnymi grupami i kontami użytkownika**
+
+#### Cel zadania:
+Celem tego zadania jest praktyczna nauka korzystania z narzędzi wiersza poleceń systemu Windows 10 w celu utworzenia konta użytkownika, przypisania go do lokalnej grupy i zmiany polityki ustawień tej grupy.
+
+**Kroki:**
+
+❗ Należy udokumentować każdy krok zadania zrzutem ekranowym pełnego ekranu. Proszę pamiętać o wnioskach❗
+
+1. Otwórz wiersz poleceń jako administrator, klikając prawym przyciskiem myszy na menu "Start" i wybierając ``Wiersz poleceń (Administrator)``.
+2. Utwórz nowe konto użytkownika za pomocą polecenia ``net user``.
+3. Następnie utwórz nową lokalną grupę za pomocą polecenia ``net localgroup``.
+4. Przypisz utworzone konto użytkownika do nowej grupy, używając polecenia ``net localgroup``.
+5. Zmień konkretną politykę ustawień dla nowej grupy. Na przykład, możesz ograniczyć dostęp do określonych plików lub folderów, ustawiając odpowiedne uprawnienia za pomocą poleceń lub narzędzi systemowych.
+
+#### Pytania kontrolne:
+1. Jakie są wbudowane konta lokalne w systemie Windows?
+2. Jak utworzyć nowe konto użytkownika za pomocą polecenia "net user"?
+3. Jak utworzyć nową lokalną grupę za pomocą polecenia "net localgroup"?
+4. Jak przypisać konto użytkownika do lokalnej grupy za pomocą polecenia "net localgroup"?
+5. Jak można zmienić konkretne polityki ustawień dla grupy?
+6. Wnioski.
 
 <hr>
 
@@ -694,5 +855,13 @@ Rejestr systemowy w systemie Windows to hierarchiczna baza danych, która przech
 ## 13. **Tworzenie i Zabezpieczanie Kopii Zapasowych:**
     - Narzędzia do tworzenia kopii zapasowych.
     - Praktyki związane z bezpieczeństwem danych.
+
+</div>
+
+---
+
+<div align="right">
+   
+🪟 🪟 🪟
 
 </div>
