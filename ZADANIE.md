@@ -6,7 +6,7 @@
 - Nadane odpowiednie `uprawnienia` do przesłania skryptu
 - Zadanie wykonane od początku do końca (nie są oceniane połowiczne rozwiązania)
 - Kreatywne rozwiązania są nagradzane
-- Samodzielna praca === Odpowiedź ustna z wykonanego zadania
+- Samodzielna praca === odpowiedź ustna z wykonanego zadania
 - Skrypt będzie wyświetlał imie i nazwisko autora.
 - Zostanie umieszczony na platformie github w odpowiednim repozytorium przedstawiającym jego funkcjonalność.
 
