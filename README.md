@@ -811,9 +811,177 @@ Celem tego zadania jest praktyczna nauka korzystania z narzędzi wiersza polece�
 <hr>
 
 ## 6. **Bezpieczeństwo w Systemie Windows:**
-    - Mechanizmy kontroli dostępu.
-    - Ochrona przed złośliwym oprogramowaniem (antywirusy, zaporę ogniową).
+Oczywiście, przyjrzyjmy się bardziej szczegółowo mechanizmom dostępu w systemie Windows:
 
+- **Konta użytkowników i grupy:**
+   - Konta użytkowników są kluczowe dla mechanizmu dostępu. Grupy umożliwiają zbiorcze zarządzanie uprawnieniami, co ułatwia skalowanie. Administratorzy mogą przypisywać użytkowników do różnych grup w zależności od ich roli w organizacji, a następnie kontrolować dostęp na poziomie grupy.
+
+- **Lista kontroli dostępu (ACL):**
+   - Każdy plik i folder w systemie Windows ma przypisane określone uprawnienia, które kontrolują, kto może je odczytywać, zapisywać lub wykonywać. Właściciel ma zazwyczaj pełne uprawnienia, ale administratorzy systemu mogą zarządzać nimi, decydując, które grupy i użytkownicy mają dostęp do konkretnych zasobów.
+     <details>
+        <summary>🌟 Zadanie: Ograniczenie dostępu do folderu przy użyciu ACL</summary>
+        
+        - Utwórz folder
+            > Na pulpicie lub w dowolnym miejscu, utwórz nowy folder o nazwie "TajnyFolder".
+        
+        - Otwórz Command Prompt jako administrator
+            > Kliknij prawym przyciskiem myszy na ikonie menu Start, a następnie wybierz "Command Prompt (Admin)".
+
+        - Przejście do lokalizacji folderu
+            > Wprowadź polecenie `cd C:\ścieżka\do\TajnyFolder` i naciśnij Enter, aby przejść do nowo utworzonego folderu.
+        
+        - Utwórz nowy plik
+            > Wpisz `notepad Uprawnienia.txt` i naciśnij Enter. W notatniku wprowadź listę użytkowników, którym chcesz udzielić dostępu (np. `Użytkownik1`, `Użytkownik2`).
+
+        - Zapisz plik i zamknij notatnik
+
+        - Przypisz ACL do folderu
+           > W CMD wprowadź polecenie:
+
+           ```bash
+           icacls TajnyFolder /deny "Użytkownik1:(R,W,X)" /grant "Użytkownik2:(F)"
+           ```
+     
+           > `Użytkownik1` zostanie zdeny, co oznacza, że nie będzie miał praw do odczytu, zapisu ani wykonania.
+           > `Użytkownik2` otrzyma pełne prawa (Full Control).
+
+      - Zweryfikuj ustawienia ACL
+           > Aby sprawdzić ustawienia ACL, użyj polecenia:
+
+           ```bash
+           icacls TajnyFolder
+           ```
+
+        Folder `TajnyFolder` będzie dostępny tylko dla `Użytkownik2`, a `Użytkownik1` będzie miał ograniczone uprawnienia. Aby wykonać to zadanie utwórz uprzednio odpowiednich użytkowników metodami poznanymi na wcześniejszych zajęciach.
+     
+     </details>
+     
+- **Polityki bezpieczeństwa (secpol.msc):**
+   - Polityki bezpieczeństwa to zestawy reguł definiujących, jak system powinien działać w kwestiach bezpieczeństwa. Mogą obejmować zasady haseł, blokowanie kont, okresy ważności hasła, a także dostęp do konkretnych zasobów w sieci. Konfiguracja polityk bezpieczeństwa pozwala dostosować środowisko do wymagań bezpieczeństwa organizacji.
+     <details>
+        <summary>🌟 Zadanie: Ustawienia polityki bezpieczeństwa hasła</summary>
+        
+        - Otwórz Lokalne Zasady Bezpieczeństwa:
+        > Kliknij prawym przyciskiem myszy na ikonie menu Start i wybierz "Uruchom".
+        Wpisz [🔗 `secpol.msc`](https://www.itechtics.com/?dl_id=43) i naciśnij Enter, aby otworzyć Lokalne Zasady Bezpieczeństwa.
+
+        - Przejdź do Polityk Konta:
+        > W lewym panelu nawigacyjnym kliknij na "Polityki konta" i wybierz "Polityki hasła".
+
+       - Zmień ustawienia hasła:
+        > Kliknij dwukrotnie na "Minimalna długość hasła" i ustaw minimalną długość (np. 8 znaków).
+        Następnie kliknij dwukrotnie na "Wymagać wielkich liter" i ustaw na "Włączone".
+        Spróbuj również dostosować inne ustawienia, takie jak "Minimalna liczba znaków specjalnych" i "Okres ważności hasła".
+
+       - Zapisz i zamknij:
+        > Po dostosowaniu ustawień, kliknij "Zastosuj" i potwierdź zmiany.
+
+       - Uruchom polecenie gpupdate:
+        > W CMD wprowadź polecenie: `gpuupdate /force`
+        > Które spowoduje wymuszenie aktualizacji uprawnień grupy.
+       - Sprawdź zmiany:
+        > Otwórz "Panel sterowania" > "Konta użytkowników" > "Zmień ustawienia konta" i sprawdź, czy nowe ustawienia polityki zostały uwzględnione.
+
+     Polityki bezpieczeństwa dotyczące haseł zostały zmienione zgodnie z naszymi ustawieniami. Pamiętaj, że to tylko przykładowe ustawienia, a polityki bezpieczeństwa mogą obejmować wiele innych aspektów, takich jak blokowanie kont czy konfiguracja praw dostępu. 
+
+     </details>
+   
+  
+- **Kontrola konta użytkownika (UAC):**
+   - UAC zapewnia kontrole dostępu na poziomie systemu, wywołując komunikaty o zgodzie przed wykonywaniem niektórych operacji, zwłaszcza tych, które mogą wpływać na integralność systemu. UAC pomaga ograniczyć działania programów i użytkowników na poziomie administracyjnym.
+
+- **Kontrola ruchu sieciowego (Firewall):**
+   - Firewall to narzędzie lub system zabezpieczeń, które pełni kluczową rolę w ochronie sieci komputerowych przed nieautoryzowanym dostępem, atakami oraz kontroluje przepływ ruchu sieciowego. Funkcje firewalla obejmują monitorowanie, filtrowanie i blokowanie danych, zgodnie z określonymi regułami bezpieczeństwa.
+Kluczowe Aspekty Firewolla:
+
+    - Filtrowanie Pakietów:
+        Firewall analizuje pakiety danych przechodzące przez sieć, decydując, czy zezwolić na ich przekazanie czy zablokować. Filtracja może opierać się na różnych kryteriach, takich jak adres IP, porty, protokoły.
+
+    - Reguły Bezpieczeństwa:
+        Administrator sieci konfiguruje reguły określające, jakie rodzaje ruchu są dozwolone, a jakie powinny być zablokowane. To obejmuje kontrolę dostępu do konkretnych portów, protokołów czy adresów IP.
+
+    - Stateful Inspection:
+        Zaawansowane firewalle wykorzystują technikę inspekcji stanu, monitorując kontekst połączenia. Pozwala to na skuteczne blokowanie nieautoryzowanego ruchu, identyfikowanie stanów połączeń i śledzenie ich przebiegu.
+
+    - Proxy Serwera:
+        Niektóre firewalle działają jako serwery pośredniczące (proxy), które pełnią rolę pośrednika między użytkownikiem a zasobami internetowymi. Działa to na zasadzie przekierowywania żądań i odpowiedzi, co dodatkowo zwiększa kontrolę nad ruchem.
+
+    - Zabezpieczenia Warstwy Aplikacji:
+        Nowoczesne firewalle są zdolne do analizy ruchu na poziomie warstwy aplikacji, co umożliwia wykrywanie i blokowanie konkretnych aplikacji lub rodzajów ruchu, takich jak protokoły P2P.
+
+    <details>
+     <summary>🌟 Zadanie: Blokowanie ruchu sieciowego dla przeglądarki Microsoft Edge</summary>
+
+     - Otwórz "Zapory Ogniowej":
+        > Kliknij prawym przyciskiem myszy na ikonie menu Start i wybierz "Zapory Ogniowej z zaawansowanymi zabezpieczeniami".
+
+    - Przejdź do "Reguł wychodzących":
+        > W lewym panelu nawigacyjnym kliknij na "Reguły wychodzące".
+
+    - Utwórz nową regułę:
+        > Kliknij prawym przyciskiem myszy w obszarze głównym i wybierz "Nowa reguła".
+
+    - Wybierz typ reguły:
+        > Wybierz "Program" i kliknij "Dalej".
+
+    - Wskaż program do zablokowania:
+        > Wybierz "Ten program" i kliknij "Przeglądaj".
+        > Przejdź do lokalizacji, w której jest zainstalowany Microsoft Edge i wybierz plik wykonywalny przeglądarki (np. C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe).
+
+    - Wybierz działanie:
+        > Wybierz "Zablokuj połączenie" i kliknij "Dalej".
+
+    - Ustaw nazwę reguły:
+        > Wprowadź nazwę reguły (np. "Blokada Microsoft Edge") i kliknij "Dalej".
+
+    - Zakończ konfigurację:
+        > Sprawdź ustawienia i kliknij "Dalej", a następnie "Zakończ".
+
+    - Zweryfikuj regułę:
+        > Upewnij się, że nowa reguła pojawiła się na liście reguł wychodzących.
+
+      Po wykonaniu tego zadania, ruch sieciowy używany przez przeglądarkę Microsoft Edge zostanie zablokowany, co uniemożliwi przeglądarkowi uzyskanie dostępu do Internetu.
+     
+    </details>
+
+    <details>
+    <summary>🌟 Zadanie: Blokowanie ruchu sieciowego za pomocą firewalla</summary>
+      
+   - Otwórz "Zaporę systemu Windows":
+        > Kliknij prawym przyciskiem myszy na ikonie menu Start i wybierz "Zaporę systemu Windows z zaawansowanymi zabezpieczeniami".
+
+   - Utwórz nową regułę:
+        > W lewym panelu nawigacyjnym wybierz "Reguły przychodzące" lub "Reguły wychodzące", zależnie od tego, czy chcesz zablokować ruch przychodzący czy wychodzący.
+        > Kliknij "Nowa reguła..." w prawym panelu.
+
+   - Typ reguły:
+        > Wybierz "Port" i kliknij "Dalej".
+
+   - Typ portu:
+        > Wybierz "Specyficzny port" i podaj numer portu (np. 3306).
+
+   - Działanie reguły:
+        > Wybierz "Blokuj połączenie" i kliknij "Dalej".
+
+   - Zakres:
+        > Zaznacz odpowiedni zakres (publiczna, prywatna, domowa) i kliknij "Dalej".
+
+   - Nazwa reguły:
+        > Wprowadź nazwę dla reguły (np. "BlokadaPortu3306") i opcjonalnie dodaj opis.
+
+   - Zakończ ustawienia:
+        > Kliknij "Dalej" i "Zakończ".
+
+   - Zweryfikuj regułę:
+        > Wróć do okna "Zaporę systemu Windows z zaawansowanymi zabezpieczeniami" i upewnij się, że nowa reguła została dodana.
+
+   - Testuj działanie:
+        > Spróbuj teraz połączyć się z portem 3306, aby sprawdzić, czy ruch jest zablokowany zgodnie z utworzoną regułą.
+
+     Blokowanie ruchu sieciowego za pomocą firewalla powinno być dokładnie przemyślane, a reguły powinny być skonfigurowane zgodnie z wymaganiami bezpieczeństwa organizacji.
+
+    </details>
+   
 <hr>
 
 ## 7. **Administracja Zasobami Systemowymi:**
