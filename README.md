@@ -811,7 +811,7 @@ Celem tego zadania jest praktyczna nauka korzystania z narzędzi wiersza polece�
 <hr>
 
 ## 6. **Bezpieczeństwo w Systemie Windows:**
-Oczywiście, przyjrzyjmy się bardziej szczegółowo mechanizmom dostępu w systemie Windows:
+Zabezpieczanie systemu Windows 10 to kluczowy krok w utrzymaniu integralności danych, prywatności użytkowników i stabilności działania systemu operacyjnego. Windows 10 oferuje szereg wbudowanych narzędzi i funkcji, które pozwalają na skuteczne zabezpieczenie systemu przed różnymi zagrożeniami.
 
 - **Konta użytkowników i grupy:**
    - Konta użytkowników są kluczowe dla mechanizmu dostępu. Grupy umożliwiają zbiorcze zarządzanie uprawnieniami, co ułatwia skalowanie. Administratorzy mogą przypisywać użytkowników do różnych grup w zależności od ich roli w organizacji, a następnie kontrolować dostęp na poziomie grupy.
