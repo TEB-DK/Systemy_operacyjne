@@ -985,9 +985,200 @@ Kluczowe Aspekty Firewolla:
 <hr>
 
 ## 7. **Administracja Zasobami Systemowymi:**
-    - Monitorowanie zasobów systemowych (CPU, pamięć, dysk).
-    - Zarządzanie urządzeniami i sterownikami.
+   ### Monitorowanie zasobów systemowych
+   Monitorowanie zasobów systemowych polega na śledzeniu wykorzystania kluczowych zasobów komputera, takich jak procesor (CPU), pamięć RAM, oraz dysk. To umożliwia administratorom systemów i użytkownikom monitorowanie wydajności systemu, identyfikowanie potencjalnych problemów i optymalizowanie działania systemu operacyjnego.
 
+   #### 1. Monitorowanie CPU:
+
+   - **Procentowy Użycie CPU:** Monitorowanie procentowego użycia procesora, aby zidentyfikować obciążenia i zaplanować skalowanie zasobów.
+     
+   - **Liczba Rdzeni CPU:** Śledzenie liczby aktywnych rdzeni CPU, szczególnie przy wielu procesach równoległych.
+   
+   #### 2. Monitorowanie Pamięci RAM:
+   
+   - **Użycie Pamięci RAM:** Obserwowanie, ile pamięci RAM jest aktualnie w użyciu i czy może występować potrzeba dodatkowej pamięci.
+   
+   - **Pamięć Wirtualna:** Monitorowanie pamięci wirtualnej, aby uniknąć błędów braku pamięci.
+   
+   #### 3. Monitorowanie dysku:
+   
+   - **I/O Dysku:** Analiza operacji wejścia/wyjścia na dysku, aby zidentyfikować potencjalne opóźnienia związane z dostępem do danych.
+   
+   - **Przestrzeń Dyskowa:** Monitorowanie ilości dostępnej przestrzeni dyskowej, aby zapobiec problemom związanych z brakiem miejsca na dysku.
+   
+   ### Narzędzia do monitorowania zasobów w systemie Windows:
+
+   #### 1. PerfMon (Performance Monitor) - `perfmon.msc`:
+   
+   - **Opis:** PerfMon jest wbudowanym narzędziem w systemie Windows, które umożliwia monitorowanie i zbieranie danych dotyczących wydajności systemu.
+   
+   - **Przykłady Monitorowanych Danych:** Użycie procesora, użycie pamięci, aktywność dysku, itp.
+
+   <div align='center'>
+      
+   ![windows_perfmon](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/c80d235b-6d5a-4d0e-945b-ce16a5c05d8d)
+
+   </div>
+
+   #### Jak otworzyć Monitor Wydajności
+
+   Na systemie Windows 10 można korzystać z Monitora Wydajności do analizy danych takich jak użycie procesora, dysku twardego, pamięci i sieci. Jednak najpierw trzeba wiedzieć, jak otworzyć to narzędzie. Oto trzy sposoby otwierania Monitora Wydajności:
+   
+   1. Otwórz menu Start, wyszukaj "Monitor Wydajności" i kliknij wynik wyszukiwania.
+   2. Użyj skrótu klawiszowego Windows + R, aby otworzyć polecenie Uruchom, wpisz "perfmon.msc" i kliknij OK, aby otworzyć Monitor Wydajności.
+   3. Użyj skrótu klawiszowego Windows + X, aby otworzyć menu Użytkownika Zaawansowanego, wybierz "Zarządzanie Komputerem" i kliknij na opcję "Wydajność".
+   
+   #### Jak korzystać z Monitora Wydajności
+
+   Po otwarciu narzędzia, znajdziesz się na stronie głównej, która zawiera krótki przegląd, a także podsumowanie systemu z danymi na temat pamięci, karty sieciowej, dysku fizycznego oraz użycia procesora w czasie rzeczywistym.
+   Z lewej strony znajduje się panel nawigacyjny z dostępem do Monitora Wydajności, Zbiorów Kolektora Danych oraz Raportów.
+   
+   Przełączając się na Monitor Wydajności, zobaczysz ekran z pojedynczym licznikiem. Zazwyczaj jest to licznik "Czas procesora", który wyświetla obciążenie procesora w ostatnich 100 sekundach. Jednak piękno tego narzędzia polega na tym, że możesz dodać mnóstwo innych liczników, aby monitorować praktycznie wszystko na swoim komputerze.
+   
+   ##### **Dodawanie nowych liczników**:
+   
+   Aby dodać nowe liczniki i monitorować działanie aplikacji oraz sprzętu na swoim komputerze, wykonaj następujące kroki:
+   
+   1. Kliknij zielony przycisk plus nad wykresem Monitora Wydajności.
+   2. Wybierz lokalny komputer lub nazwę swojego komputera z rozwijanego menu.
+   3. Wybierz i rozwinię kategorię elementu, który chcesz monitorować. Na przykład, w celu tego przewodnika, wybierz kategorię "Network Adapter" (Karta sieciowa).
+   4. Wybierz liczniki, które chcesz monitorować (np. Bytes Total/sec).
+      > Szybka wskazówka: Jeśli próbujesz dodać wiele liczników, naciśnij i przytrzymaj klawisz Ctrl, a następnie kliknij, aby wybrać każdy element, który chcesz dodać. Możesz także zaznaczyć opcję "Show description" (Pokaż opis), aby uzyskać więcej informacji na temat wybranego licznika.
+   6. Jeśli dotyczy, wybierz instancje, które chcesz monitorować. Na przykład, w przypadku "Network Adapter", możesz monitorować jedną lub wiele kart sieciowych jednocześnie.
+   7. Kliknij przycisk "Add" (Dodaj).
+   8. Zatwierdź przyciskiem "Ok".
+
+   #### 🌟 Zadanie do wykonania
+   Opisz i udokumentuj wykonanie powyższych kroków, dodatkowo sporządź opis (co to jest oraz jakie informacje zostają nam udostępnione) liczników: procesora, dysku, karty sieciowej, pamięci oraz pliku stronnicowania.
+   
+   #### 2. Task Manager (Menedżer Zadań) - `taskmgr.exe`:
+   
+   - **Opis:** Menedżer zadań to prosty interaktywny interfejs, który umożliwia natychmiastowe sprawdzanie wydajności systemu.
+   
+   - **Przykłady Monitorowanych Danych:** Procentowe użycie CPU, zużycie pamięci, aktywność dysku.
+
+   <div align='center'>
+   
+   ![windows_taskmgr](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/04a578f8-0b88-4bbc-a145-6107e831b9e9)
+
+   </div>
+
+   #### 🌟 Zadanie do wykonania
+   Utwórz prostą dokumentacje polegającą na opisaniu poszczególnych zakładek (wraz z zrzutami ekranowymi) menadżera zadań z uwzględnieniem najważniejszych informacji i wyjaśnieniem ich.
+   Pamiętaj o monitorze zasobów (zakładka wydajność), który pełni również ważną role w systemie Windows.
+
+   
+   ### Narzędzia do Monitorowania Zasobów w Systemie Linux:
+   
+   #### 1. `top`:
+   
+   - **Opis:** top to narzędzie konsolowe w systemie Linux, które dostarcza informacji na temat aktualnie działających procesów oraz wydajności systemu.
+   
+   - **Przykłady Monitorowanych Danych:** Procentowe użycie CPU, zużycie pamięci, lista aktualnie działających procesów.
+
+   <div align='center'>
+   
+   ![linux_top](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/bf09cd16-b786-46dc-8422-7c841fe12f83)
+
+   </div>
+   
+   #### 2. `vmstat`:
+   
+   - **Opis:** vmstat umożliwia monitorowanie wydajności systemu, dostarczając informacji na temat pamięci, procesów, bloków I/O, itp.
+   
+   - **Przykłady Monitorowanych Danych:** Ilość wolnej pamięci, ilość operacji wejścia/wyjścia na dysku.
+
+   <div align='center'>
+   
+   ![linux_vmstat](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/7593ba11-61fd-4d93-b8cc-5e6e37c3c00c)
+
+   </div>
+
+   ### Zarządzanie urządzeniami i sterownikami
+
+   #### Menadżer urządzeń - `devmgmt.msc`
+   Menadżer Urządzeń w systemie Windows 10 to zaawansowane narzędzie systemowe, dostępne dla użytkowników w celu kompleksowego zarządzania wszelkimi urządzeniami sprzętowymi zainstalowanymi w ich komputerze. Poprzez Menadżera Urządzeń, użytkownicy mogą uzyskać szczegółowe informacje na temat podłączonych podzespołów, kontrolować ich działanie, diagnozować ewentualne problemy oraz zarządzać sterownikami odpowiedzialnymi za poprawne funkcjonowanie tych urządzeń.
+
+   <div align='center'>
+      
+   ![windows_devmgmt](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/ef19bb7a-48d3-4c4c-93ea-e8628ecbf5ea)
+
+   </div>
+   
+   ##### Instalacja sterowników
+   
+   1. Otwórz Menadżer Urządzeń:
+   
+       - Naciśnij klawisz Windows + X, aby otworzyć menu szybkiego dostępu.
+       - Wybierz "Menadżer Urządzeń" z listy.
+   
+   2. Znajdź Urządzenie do Aktualizacji:
+   
+       - W Menadżerze Urządzeń przeglądaj listę kategorii, aby znaleźć urządzenie, którego sterowniki chcesz zainstalować lub zaktualizować.
+
+      <div align='center'>
+         
+      ![obraz](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/14e4e976-6194-4920-8c2d-3f3d18634054)
+
+      </div>
+   
+       - Kliknij prawym przyciskiem myszy na wybranym urządzeniu, dla którego chcesz zaktualizować sterowniki.
+   
+   4. Wybierz Opcję "Aktualizuj sterownik":
+   
+       - W menu kontekstowym wybierz opcję "Aktualizuj sterownik".
+
+      <div align='center'>
+         
+      ![obraz](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/6c124ce3-4930-42bf-98ac-fe2e965e6545)
+
+      </div>
+      
+   5. Wybierz "Przeglądaj mój komputer w poszukiwaniu oprogramowania sterownika":
+   
+       - Po wybraniu "Aktualizuj sterownik", wybierz opcję "Przeglądaj mój komputer w poszukiwaniu oprogramowania sterownika".
+
+      <div align='center'>
+        
+      ![obraz](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/e5fcfb1d-cbfd-480a-8330-70e4b9783ba3)
+
+      </div>
+      
+   5. Wskaż Lokalizację Sterownika:
+   
+       - Wybierz opcję "Pozwól mi wybrać z listy dostępnych sterowników na moim komputerze".
+       - Wskazuj lokalizację, gdzie znajduje się plik sterownika, lub wybierz "Płytę CD-ROM" lub "Folder, który zawiera pliki sterownika".
+         
+      <div align='center'>
+         
+      ![obraz](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/68d59e57-96df-4b85-b08b-8d58fcc13a4b)
+
+      </div>
+
+   
+   7. Wybierz Sterownik i Zakończ Proces:
+   
+      - Wybierz odpowiedni sterownik z listy i postępuj zgodnie z instrukcjami na ekranie.
+      - Po zainstalowaniu sterownika zakończ proces.
+
+      <div align='center'>
+         
+      ![obraz](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/a9cacfaa-de4f-4c50-b03f-f907da36981b)
+      
+      </div>
+      
+      Czasem natomiast wyjdzie tak, że komputer nie może dopasować sterownika do urządenia, które je potrzebuje - wtedy należy szukać dalej!
+
+      <div align='center'>
+         
+      ![obraz](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/34a128fe-acec-4588-96f4-e3c8f91f726d)
+
+      </div>
+
+
+   > Zazwyczaj "automatyczne" wyszukanie sterowników w usłudze Windows Update jest daremne.
+
+   
 <hr>
 
 ## 8. **Sieci w Systemie Windows:**
