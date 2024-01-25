@@ -1181,6 +1181,145 @@ Kluczowe Aspekty Firewolla:
    
 <hr>
 
+## 8. **Windows Command line:**
+
+Command line (skrót CMD), znany również jako wiersz poleceń, to interfejs tekstowy dostępny w systemie Windows. Pozwala użytkownikowi wprowadzać polecenia tekstowe, które następnie są interpretowane i wykonane przez system operacyjny.
+
+Wiersz poleceń umożliwia użytkownikowi wykonywanie różnych zadań bez konieczności korzystania z interfejsu graficznego.
+
+### Powershell, a CMD
+Wiersz poleceń i PowerShell to dwa różne narzędzia dostępne w systemie Windows, choć oba służą do interakcji z systemem poprzez wprowadzanie poleceń. Różnice między nimi obejmują składnię, możliwości, zastosowania i stopień zaawansowania.
+
+- **Wiersz poleceń**:
+     - Korzysta z tradycyjnej składni poleceń, podobnej do tej używanej w systemie MS-DOS. Polecenia są często krótkie i oparte na prostych skrótach.
+     - Działa na zasadzie przesyłania tekstu między poleceniami. Wynikiem większości poleceń jest tekst.
+     - Nadal jest używany do wielu podstawowych zadań systemowych i komunikacji z systemem operacyjnym.
+- **Powershell**:
+     - Posiada bardziej rozbudowaną i złożoną składnię, opartą na obiektach. Polecenia PowerShell zwracają obiekty, co ułatwia przetwarzanie i przekazywanie danych między komendami.
+     - Jest bardziej obiektowy, co oznacza, że wynikiem poleceń są obiekty, a nie tylko tekst. To umożliwia bardziej elastyczne przetwarzanie danych.
+     - Jest polecany do bardziej zaawansowanych zastosowań, takich jak administracja systemem, zarządzanie usługami, konfiguracja systemu czy automatyzacja zadań.
+ 
+### Polecenia CMD
+Lista obejmuje tylko podstawowe polecenia, ale istnieje wiele innych, bardziej zaawansowanych poleceń dostępnych w Wierszu poleceń, zwłaszcza w systemie Windows PowerShell. 
+
+Można uzyskać więcej informacji na temat konkretnych poleceń i ich opcji, wpisując polecenie `help` przed nazwą polecenia, na przykład `help dir` czy `help cd`.
+
+1. **dir:**
+   - Wyświetla listę plików i katalogów w bieżącym katalogu.
+   - Jest odpowiednikiem `ls` w systemach Linux.
+
+   ```bash
+   dir
+   ```
+
+2. **cd:**
+   - Zmienia bieżący katalog.
+
+   ```bash
+   cd ścieżka_do_katalogu
+   ```
+
+3. **copy:**
+   - Kopiuje plik z jednego miejsca do drugiego.
+   - Jest odpowiednikiem `cp` w systemach Linux.
+
+   ```bash
+   copy źródło docelowe
+   ```
+
+4. **del:**
+   - Usuwa plik.
+   - Jest odpowiednikiem `rm` w systemach Linux.
+     
+   ```bash
+   del nazwa_pliku
+   ```
+
+5. **md (mkdir):**
+   - Tworzy nowy katalog.
+
+   ```bash
+   mkdir nazwa_katalogu
+   ```
+
+6. **rd (rmdir):**
+   - Usuwa katalog.
+   
+   ```bash
+   rmdir /s /q nazwa_katalogu
+   ```
+
+7. **ren (rename):**
+   - Zmienia nazwę pliku lub katalogu.
+   
+   ```bash
+   ren stara_nazwa nowa_nazwa
+   ```
+
+8. **cls:**
+   - Czyści ekran konsoli.
+
+   ```bash
+   cls
+   ```
+
+9. **echo:**
+   - Wyświetla tekst w konsoli.
+   - Za pomocą echo możemy również tworzyć pliki tekstowe z zawartością:
+     - ``echo tekst > plik.txt``
+
+   ```bash
+   echo "Tekst do wyświetlenia"
+   ```
+
+10. **ipconfig:**
+    - Wyświetla informacje dotyczące konfiguracji sieciowej.
+    - Jest odpowiednikiem `ifconfig` w systemach Linux.
+
+    ```bash
+    ipconfig
+    ```
+
+11. **ping:**
+    - Sprawdza dostępność hosta w sieci.
+
+    ```bash
+    ping adres_hosta
+    ```
+
+12. **systeminfo:**
+    - Wyświetla informacje o systemie.
+
+    ```bash
+    systeminfo
+    ```
+
+13. **tasklist:**
+    - Wyświetla listę uruchomionych procesów.
+
+    ```bash
+    tasklist
+    ```
+
+
+### 🌟 Zadania do wykonania
+Uruchom wiersz poleceń na systemie Windows i wykonaj poniższe polecenia.
+
+`Poniższe zadania udokumentuj zrzutami ekranowymi`
+1. Utwórz nowy katalog o nazwie `SO`:
+   - Przejdź do tego katalogu i utwórz kolejny katalog `Podkatalog`
+
+2. Utwórz nowy plik tekstowy za pomocą polecenia `echo. > tekstowy.txt`
+   - Następnie skopiuj `tekstowy.txt` do katalogu `SO`
+
+3. Usuń plik `tekstowy.txt`
+
+4. Zmień nazwę katalogu `SO` na `SystemyOperacyjne`
+
+5. Wyświetl informacje o systemie.
+
+<hr>
+
 ## 8. **Sieci w Systemie Windows:**
     - Konfiguracja i zarządzanie sieciami.
     - Ustawienia TCP/IP i DHCP.
@@ -1196,12 +1335,6 @@ Kluczowe Aspekty Firewolla:
 ## 10. **Windows PowerShell:**
     - Wprowadzenie do automatyzacji za pomocą PowerShell.
     - Przykłady skryptów i poleceń.
-
-<hr>
-
-## 11. **System Plików NTFS:**
-    - Charakterystyka i cechy systemu plików NTFS.
-    - Zarządzanie uprawnieniami i atrybutami plików.
 
 <hr>
 
