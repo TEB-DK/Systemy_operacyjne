@@ -1320,9 +1320,100 @@ Uruchom wiersz poleceń na systemie Windows i wykonaj poniższe polecenia.
 
 <hr>
 
-## 8. **Sieci w Systemie Windows:**
-    - Konfiguracja i zarządzanie sieciami.
-    - Ustawienia TCP/IP i DHCP.
+## 8. **Sieci w Systemie Windows**
+
+### **Konfiguracja i zarządzanie sieciami**
+
+Konfigurowanie sieci i zarządzanie nimi w systemie Windows 10 obejmuje szereg działań mających na celu ustawienie i kontrolę parametrów sieciowych oraz zarządzanie połączeniami i urządzeniami sieciowymi.
+
+#### **Połączenia sieciowe**:
+   - System umożliwia zarządzanie różnymi rodzajami połączeń sieciowych, w tym połączeniami Ethernet, Wi-Fi, VPN i inne. Można tworzyć, usuwać, łączyć się i rozłączać połączenia z różnymi sieciami w zależności od dostępności i preferencji.
+
+#### **Konfiguracja protokołów sieciowych**:
+Windows 10 umożliwia konfigurację różnych protokołów sieciowych, takich jak TCP/IP (**IPv4** i **IPv6**), klient DHCP, klient DNS, oraz wiele innych. Możesz dostosowywać ustawienia sieciowe dla każdej karty sieciowej zainstalowanej w systemie.
+
+   - `IPv4` (Internet Protocol version 4): Jest to czwarta wersja protokołu internetowego. Składa się z 32-bitowych adresów IP, które wykorzystywane są do identyfikowania i lokalizowania urządzeń w sieci. Jednak ze względu na ograniczoną przestrzeń adresową, coraz częściej zastępowane jest przez nowszą wersję IPv6.
+         
+   - `IPv6` (Internet Protocol version 6): Jest to szósta wersja protokołu internetowego, zaprojektowana jako następca IPv4. W przeciwieństwie do IPv4, używa `128-bitowych` adresów IP, co zapewnia znacznie większą przestrzeń adresową, co jest niezbędne w związku ze wzrostem ilości urządzeń podłączanych do internetu.
+         
+   - `DHCP` (Dynamic Host Configuration Protocol): Jest to protokół komunikacyjny używany w sieciach komputerowych, który umożliwia automatyczne przydzielanie adresów IP oraz innych ustawień sieciowych urządzeniom w sieci, takich jak maska podsieci, brama domyślna i serwery DNS.
+         
+   - `DNS` (Domain Name System): Jest to system, który przypisuje nazwy domen (np. example.com) do adresów IP, umożliwiając użytkownikom korzystanie z czytelnych dla ludzi nazw zamiast zapamiętywania adresów IP. Serwery DNS tłumaczą zapytania o nazwy domen na odpowiadające im adresy IP.
+         
+   - `VPN` (Virtual Private Network): Jest to technologia, która umożliwia bezpieczne i prywatne połączenie między urządzeniem a siecią internetową poprzez tunel wirtualny. VPN zapewnia szyfrowane połączenie, co zabezpiecza dane przesyłane między urządzeniem a serwerem VPN, co jest szczególnie przydatne w przypadku korzystania z publicznych sieci Wi-Fi.
+         
+   - `Firewall`: Jest to rodzaj oprogramowania lub sprzętu, który kontroluje i monitoruje ruch sieciowy między sieciami, decydując, które pakiety danych są dozwolone, a które blokowane. Firewall zapewnia zabezpieczenie sieci poprzez blokowanie nieautoryzowanego dostępu i zapobieganie atakom na sieć. Może być używany zarówno na poziomie urządzenia (np. komputera), jak i na poziomie sieci (np. routera).
+
+
+#### **Zarządzanie ustawieniami sieci bezprzewodowych**:
+Windows 10 oferuje narzędzia do zarządzania ustawieniami sieci bezprzewodowych, takimi jak wyszukiwanie i łączenie się z dostępnymi sieciami Wi-Fi, zarządzanie zapisanymi sieciami, ustalanie preferowanych sieci itp.
+
+#### **Bezpieczeństwo sieciowe**:
+   - Windows 10 zapewnia funkcje zabezpieczające sieć, takie jak firewall systemowy, funkcje VPN, zabezpieczenia sieci Wi-Fi (np. WPA2), konfiguracja reguł dostępu, kontroli rodzicielskiej i inne mechanizmy zapewniające bezpieczeństwo połączeń sieciowych.
+
+#### **Diagnostyka sieciowa**:
+   - System Windows 10 posiada wbudowane narzędzia diagnostyczne, które mogą pomóc w identyfikacji i rozwiązywaniu problemów z siecią. Narzędzia te automatycznie wykrywają i próbują naprawić problemy z połączeniem sieciowym oraz zapewniają wskazówki i sugestie dla użytkownika w celu poprawy jakości połączenia.
+
+#### **Zarządzanie udostępnianiem zasobów**:
+   - Windows 10 pozwala udostępniać zasoby w sieci lokalnej, takie jak foldery, drukarki czy pliki multimedialne. Możesz kontrolować dostęp do udostępnionych zasobów, zarządzać uprawnieniami użytkowników i monitorować aktywność udostępniania.
+
+#### **Monitorowanie wykorzystania sieci**:
+   - System Windows 10 oferuje narzędzia monitorowania wykorzystania sieci przez różne aplikacje i procesy. Możesz sprawdzić, które aplikacje zużywają najwięcej przepustowości sieciowej i zarządzać ich działaniem w celu zoptymalizowania wydajności sieciowej.
+
+### TCP/IP (Transmission Control Protocol/Internet Protocol) 
+to zestaw protokołów używanych do komunikacji w sieciach komputerowych. `TCP/IP` definiuje sposób, w jaki dane są przesyłane, adresowane, routowane i odbierane w sieci. Jest to podstawowy protokół stosowany w większości sieci komputerowych, w tym w Internecie.
+
+Ustawienia TCP/IP odnoszą się do konfiguracji parametrów protokołu TCP/IP na urządzeniach sieciowych, takich jak komputery, routery, czy urządzenia IoT. Te ustawienia obejmują:
+
+- Adres IP:
+        Adres IP (Internet Protocol) identyfikuje unikalnie urządzenie w sieci. Składa się z czterech liczb oddzielonych kropkami, na przykład `192.168.1.1`. Istnieją dwa rodzaje adresów IP: IPv4 (starsza wersja) i IPv6 (nowsza wersja, która zapewnia większą przestrzeń adresową).
+
+- Maska podsieci:
+        Maska podsieci określa, które bity w adresie IP są częścią adresu podsieci, a które identyfikują konkretne urządzenie w tej podsieci. Określa również, ile adresów IP jest dostępnych w danej podsieci.
+
+- Brama domyślna:
+        Brama domyślna (lub router domyślny) jest urządzeniem, które przekazuje pakiety danych między różnymi sieciami lub podsieciami. Jest to punkt, przez który urządzenia w sieci lokalnej uzyskują dostęp do innych sieci, w tym do Internetu.
+
+- Serwery DNS:
+        Serwery DNS (Domain Name System) przypisują nazwy domen do adresów IP. Dzięki nim możliwe jest korzystanie z czytelnych dla ludzi nazw domenowych, takich jak "example.com", zamiast pamiętania adresów IP.
+
+ <div align='center'>
+
+![tcp/ip](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/8a8a3e69-7bd9-4bfd-a899-31355e9b3c6d)
+
+</div>
+
+### Protokół DHCP (Dynamic Host Configuration Protocol)
+to protokół używany do dynamicznego przydzielania adresów IP oraz innych ustawień sieciowych urządzeniom w sieci. DHCP ułatwia zarządzanie adresami IP w sieci poprzez automatyczne przypisywanie im dostępnych adresów z puli adresów oraz konfigurację innych parametrów, takich jak maska podsieci, brama domyślna i serwery DNS. Dzięki DHCP urządzenia mogą automatycznie uzyskać odpowiednie ustawienia sieciowe bez konieczności ręcznej konfiguracji.
+
+W przypadku Windows, ustawienia TCP/IP i DHCP można skonfigurować poprzez panel sterowania lub ustawienia sieciowe w systemie. Dostępne są opcje konfiguracji ręcznej, gdzie użytkownik wprowadza żądane parametry, oraz opcja automatycznego pobierania ustawień z serwera DHCP, co jest często preferowaną metodą, szczególnie w sieciach domowych i biurowych.
+
+#### Jak działa DHCP?
+
+1. **Żądanie adresu IP**:
+   - Kiedy urządzenie dołącza do sieci, wysyła żądanie DHCP Broadcast, aby uzyskać adres IP. W sieci może być obecny serwer DHCP, który odpowiada na to żądanie.
+
+2. **Przydzielenie adresu IP**:
+   - Serwer DHCP może przydzielić urządzeniu nowy adres IP z puli dostępnych adresów. Adres ten jest tymczasowy i może się zmieniać przy każdym połączeniu z siecią.
+
+3. **Konfiguracja parametrów sieciowych**:
+   - Oprócz adresu IP, serwer DHCP może również przekazać inne ustawienia sieciowe, takie jak maska podsieci, brama domyślna i serwery DNS. Dzięki temu urządzenie otrzymuje pełną konfigurację sieciową bez potrzeby ręcznej konfiguracji.
+
+4. **Odświeżanie adresu IP**:
+   - Urządzenia mogą odświeżać swoje adresy IP regularnie poprzez odnawianie dzierżawy z serwera DHCP. Proces ten zapewnia, że adresy IP są używane tylko przez aktywne urządzenia w sieci.
+
+#### Zalety DHCP:
+
+- **Skraca czas konfiguracji**: DHCP eliminuje potrzebę ręcznego przydzielania adresów IP, co oszczędza czas i wysiłek administratorów sieci.
+- **Zapobiega konfliktom adresów IP**: Serwer DHCP zapewnia, że każde urządzenie otrzymuje unikalny adres IP, co minimalizuje ryzyko konfliktów adresów.
+- **Ułatwia zarządzanie adresami IP**: Administracja pulą adresów IP jest prostsza, ponieważ serwer DHCP automatycznie zarządza dostępnymi adresami.
+- **Zwiększa elastyczność**: Możliwość automatycznego przydzielania adresów IP pozwala na dynamiczne rozszerzanie sieci i dodawanie nowych urządzeń bez konieczności ręcznej konfiguracji.
+
+ <div align='center'>
+    
+![dhcp](https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/49bb6702-2e9b-41bb-b4d9-e492e4505964)
+
+</div>
 
 <hr>
 
