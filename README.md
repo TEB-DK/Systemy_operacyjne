@@ -589,6 +589,79 @@ $ wait
 
 W tym przykładzie czekanie trwało nieco mniej niż 999 sekund. Możemy czekać tylko na wybrane polecenia w tle, podając ich numery jako argumenty poleceniu `wait`.
 
+---
+
+<h2>
+<img src="https://github.com/TEB-DK/Systemy_operacyjne/assets/125214141/b2ffe19d-22bf-4a0a-8a00-59abd7695532" width="32" align="top"/> Dystrybucje Linux
+</h2>
+
+Dystrybucje Linuksa to gotowe zestawy oprogramowania oparte na jądrze Linuksa, dostosowane do różnych potrzeb i zastosowań.
+
+Można je porównać do różnych wersji popularnego systemu operacyjnego, np. Windowsa, z tą różnicą, że dystrybucje Linuksa są tworzone przez różne społeczności i firmy.
+
+Istnieje mnóstwo dystrybucji Linuksa, różniących się między sobą:
+
+- Zestawem domyślnego oprogramowania: Niektóre dystrybucje skupiają się na stabilności i oferują podstawowe programy, podczas gdy inne oferują bogate zestawy oprogramowania, w tym gry i narzędzia graficzne.
+- Środowiskiem graficznym: Dostępne są dystrybucje z graficznymi interfejsami użytkownika (GUI), takimi jak KDE Plasma, GNOME czy Xfce, a także dystrybucje przeznaczone do obsługi z wiersza poleceń.
+- Poziomem zaawansowania: Niektóre dystrybucje są łatwe w obsłudze i idealne dla początkujących, podczas gdy inne wymagają większej wiedzy technicznej i konfiguracji.
+- Przeznaczeniem: Istnieją dystrybucje przeznaczone do serwerów, laptopów, komputerów stacjonarnych, a nawet urządzeń mobilnych.
+
+
+### Przykładowe dystrybucje
+
+#### Ubuntu
+
+Uniwersalna dystrybucja dostępna zarówno w wersji desktopowej, jak i serwerowej. Cechuje się łatwością użytkowania, bogatym wyborem oprogramowania i dużą społecznością. Regularnie otrzymuje aktualizacje bezpieczeństwa i oprogramowania.
+
+#### Ubuntu Server:
+
+Skoncentrowana na serwerach wersja Ubuntu. Zoptymalizowana pod kątem wydajności i bezpieczeństwa. Posiada mniejsze środowisko graficzne i bogaty zestaw narzędzi administracyjnych. Oferuje stabilność i długoterminowe wsparcie, w tym wersje LTS z 5-letnim wsparciem.
+
+#### CentOS:
+
+Kompatybilny binarnie z Red Hat Enterprise Linux (RHEL). Skupia się na stabilności i długoterminowym wsparciu. Jest dostępny bezpłatnie, co czyni go atrakcyjnym wyborem dla użytkowników o ograniczonym budżecie. Posiada mniejszą częstotliwość aktualizacji, co może być wadą dla niektórych użytkowników.
+
+> RHEL to skrót od Red Hat Enterprise Linux, czyli komercyjnej dystrybucji Linuksa stworzonej przez firmę Red Hat. Jest ona przeznaczona dla przedsiębiorstw i organizacji, oferując stabilne i bezpieczne środowisko do uruchamiania aplikacji i usług.
+
+#### Fedora:
+
+Dostarcza dostęp do najnowszych wersji kernela Linuksa i popularnych aplikacji. Posiada dojrzały system zarządzania pakietami DNF i aktywną społeczność developerską. Cechuje się krótszym okresem wsparcia i może być mniej stabilna niż inne dystrybucje ze względu na częste aktualizacje.
+
+Wybór odpowiedniej dystrybucji zależy od indywidualnych potrzeb i wymagań użytkownika.
+
+- Ubuntu: Uniwersalna dystrybucja dla początkujących i użytkowników domowych.
+- Ubuntu Server: Stabilna i łatwa w zarządzaniu dystrybucja serwerowa.
+- CentOS: Kompatybilny z RHEL, stabilny i bezpłatny.
+- Fedora: Nowoczesne oprogramowanie, krótsze wsparcie, częste aktualizacje.
+
+#### Zorin OS
+Zorin OS to łatwy w użyciu system operacyjny dla początkujących. Posiada przyjazny interfejs graficzny imitujący system Windows, co ułatwia nawigację i obsługę. Dostępny jest w różnych wariantach, dostosowanych do różnych potrzeb użytkowników, od wersji Lite dla słabszych komputerów po wersję Ultimate z bogatym zestawem oprogramowania. Zorin OS jest zoptymalizowany pod kątem wydajności i oferuje płynne działanie nawet na starszych maszynach. Dostępne są bogate repozytoria z oprogramowaniem, w tym gry i programy użytkowe. System posiada również wbudowane narzędzia do tworzenia kopii zapasowych, przywracania systemu i optymalizacji.
+
+##### Wymagania sprzętowe
+    Minimalne:
+        Procesor: 1 GHz
+        Pamięć RAM: 512 MB
+        Wolne miejsce na dysku: 10 GB
+    Zalecane:
+        Procesor: 2 GHz
+        Pamięć RAM: 2 GB
+        Wolne miejsce na dysku: 20 GB
+
+
+#### Tiny Core Linux (TCL)
+Tiny Core Linux to bardzo lekka dystrybucja, zajmująca minimalną ilość miejsca na dysku. Brak graficznego interfejsu użytkownika sprawia, że obsługa odbywa się za pomocą wiersza poleceń, co może być skomplikowane dla początkujących. Modułowa konstrukcja dystrybucji pozwala na doinstalowanie tylko niezbędnych modułów i aplikacji, co zapewnia dużą elastyczność i wydajność. Tiny Core Linux jest idealna dla starszych komputerów i serwerów. Zaawansowane funkcje, takie jak obsługa skryptów i automatyzacji, czynią ją atrakcyjnym wyborem dla doświadczonych użytkowników.
+
+##### Wymagania sprzętowe
+    Minimalne:
+        Procesor: 486DX
+        Pamięć RAM: 32 MB
+        Wolne miejsce na dysku: 10 MB
+    Zalecane:
+        Procesor: Pentium III
+        Pamięć RAM: 128 MB
+        Wolne miejsce na dysku: 50 MB
+
+
 <div align="right">
 🐧 🐧🐧
 </div>
